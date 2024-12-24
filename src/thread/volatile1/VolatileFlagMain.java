@@ -21,7 +21,7 @@ public class VolatileFlagMain {
 
     static class MyTask implements Runnable {
 
-        boolean runFlag = true;
+        volatile boolean runFlag = true;
 
         @Override
         public void run() {
@@ -31,7 +31,7 @@ public class VolatileFlagMain {
                 //runFlag false 변하면 탈출
             }
 
-            log("taks 종료");
+            log("task 종료");
         }
     }
 }
