@@ -21,7 +21,7 @@ public class BankAccountV4 implements BankAccount {
 
         log("거래 시작 :" + getClass().getSimpleName());
 
-        lock.lock();
+        lock.lock(); //ReentrantLock 활용한 lock 획득
 
         try {
 
