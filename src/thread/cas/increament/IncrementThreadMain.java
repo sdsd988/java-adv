@@ -13,6 +13,9 @@ public class IncrementThreadMain {
 
     public static void main(String[] args) throws InterruptedException {
         test(new BasicInteger());
+        test(new VolatileInteger());
+        test(new SyncInteger());
+        test(new MyAtomicInteger());
     }
 
     private static void test(IncrementInteger incrementInteger) throws InterruptedException {
@@ -25,8 +28,10 @@ public class IncrementThreadMain {
         };
 
         List<Thread> threads = new ArrayList<>();
+
         for (int i = 0; i < THREAD_COUNT; i++) {
             Thread thread = new Thread(runnable);
+            threads.add(thread);
             thread.start();
         }
 
