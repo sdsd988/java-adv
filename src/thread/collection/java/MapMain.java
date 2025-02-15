@@ -19,7 +19,5 @@ public class MapMain {
         map2.put(1, "data1");
         System.out.println("map2 = " + map2);
 
-
-
     }
 }
